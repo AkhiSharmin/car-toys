@@ -1,0 +1,6 @@
+.card_hover:hover {
+  border-bottom: 5px solid seagreen;
+}
+.background-color {
+  background-color: rgb(230, 235, 240);
+}
