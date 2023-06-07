@@ -31,11 +31,15 @@ const Login = () => {
   };
 
   const handelSingIn = () => {
-    googleSingIn()
+    signInWithPopup(auth, googleProvider)
       .then((result) => {
-        console.log(result.user);
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from, { replace: true });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error.message);
+      });
   };
 
   return (
