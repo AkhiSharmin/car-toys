@@ -5,10 +5,14 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import bgVideo from "../../assets/login.mp4";
 import "./Login.css";
 import useTitle from "../../Hook/useTitle";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import app from "../../firebase/firebase.config";
+
 
 const Login = () => {
   useTitle("login");
-
+  const auth = getAuth(app);
+  const googleProvider = new GoogleAuthProvider();
   const { loggedInUser, googleSingIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
